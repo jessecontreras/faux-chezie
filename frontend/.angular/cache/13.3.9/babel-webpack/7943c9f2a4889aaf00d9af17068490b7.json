@@ -1,0 +1,1 @@
+{"ast":null,"code":"export class ERG {\n  constructor(name, numberOfMembers, _id) {\n    // check for types and then\n    // do assignment to fields if needed\n    // now we are just assiging it\n    // without checking for the types\n    this._id = _id;\n    this.name = name;\n    this.numberOfMembers = numberOfMembers;\n  }\n\n}","map":null,"metadata":{},"sourceType":"module"}

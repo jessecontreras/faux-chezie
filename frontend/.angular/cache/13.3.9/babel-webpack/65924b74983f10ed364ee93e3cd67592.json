@@ -1,0 +1,1 @@
+{"ast":null,"code":"export const environment = {\n  production: true,\n  api: 'faux-chezie.com/apis'\n};","map":null,"metadata":{},"sourceType":"module"}
