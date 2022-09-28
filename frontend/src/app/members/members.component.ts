@@ -21,6 +21,7 @@ export class MembersComponent implements OnInit {
   labelData: number[] = [];
 
   async ngOnInit() {
+    await this.ergService.getAllErgs();
     await this.ergDataSetup();
   }
   //Bar chart options

@@ -34,6 +34,7 @@ export class HomeComponent implements OnInit {
    * Subscribe to erg subject and then call to get all ergs.
    */
   async ngOnInit() {
+    await this.ergService.getAllErgs();
     await this.ergDataSetup();
   }
 
