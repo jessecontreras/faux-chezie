@@ -103,6 +103,7 @@ export class HomeComponent implements OnInit {
   /**
    * Opens dialog box to confirm erg deletion.
    * Deletes ERG in event of confirmed deletion.
+   * @param ergId - ERG id.
    */
   async openConfirmErgDeletion(ergId: string | undefined) {
     try {

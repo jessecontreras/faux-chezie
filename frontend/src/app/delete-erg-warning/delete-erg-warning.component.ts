@@ -9,10 +9,14 @@ import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 export class DeleteErgWarningComponent {
   constructor(private dialogRef: MatDialogRef<DeleteErgWarningComponent>) {}
 
-  async delete(mybool: string) {
+  /**
+   * If modal is manually close by delete button, delete ERG.
+   * @returns {Promise<void>}
+   */
+  async delete(): Promise<void> {
     try {
       this.dialogRef.close({ delete: true });
-      //return mybool;
+      return;
     } catch (err) {
       console.log(err);
       throw err;

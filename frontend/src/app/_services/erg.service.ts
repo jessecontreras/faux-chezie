@@ -29,7 +29,11 @@ export class ErgService {
     return this.ergSubject$.value;
   }
 
-  async getAllErgs() {
+  /**
+   * Gets all ERG
+   * @returns {Promise<ERG[]|[]>} An array of ERGs or a lone array.
+   */
+  async getAllErgs(): Promise<ERG[] | []> {
     try {
       const response = await firstValueFrom(
         this.http.get<ERG[]>(`${environment.api}/ergs`)
@@ -50,8 +54,12 @@ export class ErgService {
       throw err;
     }
   }
-
-  async createErg(ergToCreate: ERG) {
+  /**
+   * Creates ERG.
+   * @param ergToCreate - ERG object to be created.
+   * @returns {<Promise<ERG>} - ERG value.
+   */
+  async createErg(ergToCreate: ERG): Promise<ERG> {
     try {
       const response = await firstValueFrom(
         this.http.post<ERG>(`${environment.api}/ergs`, { erg: ergToCreate })
@@ -61,7 +69,6 @@ export class ErgService {
       if ('error' in response) {
         return response;
       }
-
       //Check for the null case, if so assign ergs an empty array.
       const ergs = this.ergsValue ? this.ergsValue : [];
       ergs.push(response);
@@ -73,7 +80,11 @@ export class ErgService {
       throw err;
     }
   }
-
+  /**
+   * Delete selected ERG.
+   * @param _id - ERG id.
+   * @returns {Promise<void>}
+   */
   async deleteErg(_id: string): Promise<void> {
     try {
       const response = await firstValueFrom(
@@ -95,4 +106,6 @@ export class ErgService {
       throw err;
     }
   }
+
+
 } //end class

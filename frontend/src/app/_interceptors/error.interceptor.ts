@@ -13,6 +13,9 @@ export class ErrorInterceptor implements HttpInterceptor {
   constructor(private accountService: AccountService) {
     
   }
+  /**
+   * Really checking for 401 (not auth) errors, logout if so.
+   */
   intercept(
     request: HttpRequest<any>,
     next: HttpHandler

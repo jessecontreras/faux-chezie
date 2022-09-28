@@ -30,6 +30,10 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void {}
 
+  /**
+   * Calls service to authenticate user
+   * @returns {Promise<void>}
+   */
   async authUser() {
     try {
       this.buttonText = 'Please wait ...';
@@ -41,7 +45,7 @@ export class LoginComponent implements OnInit {
         this.resetFormValues();
         return;
       }
-
+      
       this.accountService
         .authUser(emailValue, passwordValue)
         .pipe(first())
@@ -61,7 +65,6 @@ export class LoginComponent implements OnInit {
           error: (error) => {
             this.alertService.error(error);
             this.resetFormValues();
-            // this.loading = false;
           },
         });
       return;
@@ -70,10 +73,12 @@ export class LoginComponent implements OnInit {
       throw err;
     }
   }
-
+  /**
+   * Reset form values after unsuccessful ('attemp')
+   * @returns {Promise<void>}
+   */
   async resetFormValues() {
     try {
-      //this.processingLogin = false;
       this.buttonText = 'Log In';
       return;
     } catch (err) {

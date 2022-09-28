@@ -30,6 +30,10 @@ export class ModalComponent {
     numberOfMembers: ['', [Validators.required, Validators.min(1)]],
   });
 
+  /**
+   * Calls service to create erg if values are valid
+   * @returns {Promise<void>}
+   */
   async createErg() {
     try {
       if (!this.firstFormGroup.valid || !this.secondFormGroup.valid) {

@@ -23,10 +23,9 @@ export class MembersComponent implements OnInit {
   async ngOnInit() {
     await this.ergDataSetup();
   }
-
+  //Bar chart options
   public barChartOptions: ChartConfiguration['options'] = {
     responsive: true,
-
     datasets: {
       bar: {
         hoverBackgroundColor: '#ffb247',
@@ -39,7 +38,7 @@ export class MembersComponent implements OnInit {
         min: 5,
       },
     },
-    
+
     backgroundColor: '#3248f3',
     plugins: {
       tooltip: {
@@ -47,11 +46,10 @@ export class MembersComponent implements OnInit {
           labelColor(tooltipItem) {
             return {
               borderColor: '#ffb247',
-              backgroundColor:'#ffb247',
-              
-            }
+              backgroundColor: '#ffb247',
+            };
           },
-        }
+        },
       },
       legend: {
         display: true,
@@ -66,20 +64,14 @@ export class MembersComponent implements OnInit {
   };
 
   public barChartType: ChartType = 'bar';
+  //Use barchart plugin for custom styles
   public barChartPlugins = [DataLabelsPlugin];
-
+  //Bar chart data is assigned to class properties
   public barChartData: ChartData<'bar'> = {
     labels: this.chartLabels,
 
     datasets: [{ data: this.labelData, label: 'OVERALL MEMBERSHIP' }],
   };
-
-  //chart colors
-  /* public chartcolors: Array<any> = [
-    {
-      backgroundColor: ['#3248f3', '#ffb247'],
-    },
-  ];*/
   //Chart events
   public chartClicked({
     event,
