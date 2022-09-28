@@ -22,7 +22,6 @@ router.delete("/:_id", tokenHelper.verifyToken, _delete);
  */
 async function getAll(req, res) {
   try {
-    console.log("In get all route!");
     const ergs = await ergController.getAll();
     res.send(ergs);
   } catch (err) {

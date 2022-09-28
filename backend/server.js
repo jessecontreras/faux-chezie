@@ -39,7 +39,6 @@ app.use("/apis/ergs", ergsRoute);
 
 //Serve frontend SPA
 app.get("*", (req, res) => {
-  console.log("Made it to server angular!");
   //res.send("Hello World!");
   res.sendFile(path.join(__dirname, `${process.env.SPA_PATH}/index.html`));
 });

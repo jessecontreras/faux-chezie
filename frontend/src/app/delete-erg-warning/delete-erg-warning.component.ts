@@ -11,7 +11,6 @@ export class DeleteErgWarningComponent {
 
   async delete(mybool: string) {
     try {
-      console.log(mybool);
       this.dialogRef.close({ delete: true });
       //return mybool;
     } catch (err) {

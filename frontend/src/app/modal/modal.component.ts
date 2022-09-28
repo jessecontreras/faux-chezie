@@ -32,9 +32,6 @@ export class ModalComponent {
 
   async createErg() {
     try {
-      console.log('Create erg');
-      console.log(this.firstFormGroup.controls['ergName'].value);
-      console.log(this.secondFormGroup.controls['numberOfMembers'].value);
       if (!this.firstFormGroup.valid || !this.secondFormGroup.valid) {
         this.alertService.error(
           'Your ERG name or the number of members in ERG is invalid.'

@@ -32,7 +32,6 @@ async function getAll() {
       .collection(FauxChezieCollections.ERGs)
       .find()
       .toArray();
-    console.log(ergs);
     return ergs;
   } catch (err) {
     console.log(err);

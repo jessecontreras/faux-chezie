@@ -33,7 +33,6 @@ async function authenticate(username, password) {
       .findOne({
         username: username.toLowerCase(),
       });
-    console.log(user);
     //return error message if user does not exist.
     if (!user) {
       return {

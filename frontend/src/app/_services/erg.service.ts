@@ -40,11 +40,10 @@ export class ErgService {
       }
       //Check for the null case, if so assign ergs an empty array.
       const ergs = this.ergsValue ? this.ergsValue : [];
-      console.log('Made it back');
-      console.log(response);
+
       localStorage.setItem('ergs', JSON.stringify(response));
       this.ergSubject$.next(response);
-      console.log(response);
+
       return response;
     } catch (err) {
       console.log(err);
@@ -62,8 +61,7 @@ export class ErgService {
       if ('error' in response) {
         return response;
       }
-      console.log('made it back');
-      console.log(response);
+
       //Check for the null case, if so assign ergs an empty array.
       const ergs = this.ergsValue ? this.ergsValue : [];
       ergs.push(response);
@@ -78,16 +76,13 @@ export class ErgService {
 
   async deleteErg(_id: string): Promise<void> {
     try {
-      console.log('delete erg');
       const response = await firstValueFrom(
         this.http.delete<any>(`${environment.api}/ergs/${_id}`)
       );
-      console.log(response);
       //Get index of erg to remove from ergs.
       const ergIndex = this.ergsValue?.findIndex((erg) => {
         return erg._id === response._id;
       });
-      console.log(`Index is:${ergIndex}`);
       //Remove erg from our ergsValue array.
       this.ergsValue?.splice(ergIndex!, 1);
       //update our local storage ergs
