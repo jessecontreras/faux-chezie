@@ -1,0 +1,95 @@
+.page-container {
+}
+
+.login {
+  display: grid;
+  grid-template-columns: repeat(11, 1fr);
+  grid-template-rows: repeat(11, 1fr);
+  min-height: 660px;
+  height: 100vh;
+}
+
+.login-section {
+  grid-area: 1/1/12/12;
+  background-color: rgb(249, 249, 250);
+  display: grid;
+  grid-template-columns: repeat(11, 1fr);
+  grid-template-rows: repeat(11, 1fr);
+  justify-items: center;
+}
+
+.logo {
+  height: 51px;
+  width: 153px;
+  grid-area: 2/1/4/12;
+  img {
+    height: 51px;
+    width: 153px;
+    object-fit: contain;
+  }
+}
+.input-card {
+  grid-area: 5/1/8/12;
+}
+.input-card-content {
+  padding: 25px;
+}
+
+.content-preview {
+  display: none;
+  background: linear-gradient(
+    90deg,
+    hsla(239, 98%, 42%, 1) 0%,
+    hsla(197, 85%, 51%, 1) 100%
+  );
+
+  background: -moz-linear-gradient(
+    90deg,
+    hsla(239, 98%, 42%, 1) 0%,
+    hsla(197, 85%, 51%, 1) 100%
+  );
+
+  background: -webkit-linear-gradient(
+    90deg,
+    hsla(239, 98%, 42%, 1) 0%,
+    hsla(197, 85%, 51%, 1) 100%
+  );
+}
+
+.content-container {
+  text-align: center;
+  min-height: 660px;
+}
+
+.content-text {
+  margin: 0 auto;
+  padding: 15px 25px;
+  color: whitesmoke;
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+  .login-section {
+    grid-area: 1/1/12/6;
+  }
+  .content-preview {
+    display: inherit;
+    grid-area: 1/6/12/12;
+  }
+}
+
+// X-Large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+}
+
+// XX-Large devices (larger desktops, 1400px and up)
+@media (min-width: 1400px) {
+}

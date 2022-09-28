@@ -1,0 +1,24 @@
+<div class="page-container">
+  <div class="members-landing">
+    <div class="kpi-card total-active-erg-members">
+      <div class="kpi-title">ACTIVE ERG MEMBERS</div>
+      <div class="kpi-metric">{{ ergMemberCount }}</div>
+    </div>
+    <div class="kpi-card graph-card">
+      <div class="graph-container">
+        <div style="display: block">
+          <canvas
+            baseChart
+            [data]="barChartData"
+            [options]="barChartOptions"
+            [plugins]="barChartPlugins"
+            [type]="barChartType"
+            (chartHover)="chartHovered($event)"
+            (chartClick)="chartClicked($event)"
+          >
+          </canvas>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

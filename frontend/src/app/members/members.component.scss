@@ -1,0 +1,82 @@
+.page-container {
+  width: 100vw;
+  top: 65px;
+  position: relative;
+}
+
+.members-landing {
+  display: grid;
+  grid-template-columns: repeat(11, 1fr);
+  grid-template-rows: repeat(11, 1fr);
+  min-height: 100vh;
+  background-color: rgb(249, 249, 250);
+}
+//This is just referred to as kpi-1, kpi-2 in the home page. Will not go back and change for the sake of this exercise. Would make a global style as well.
+.kpi-card {
+  min-height: 125px;
+  min-width: 250px;
+  border-radius: 10px;
+  width: 100%;
+  background-color: white;
+  place-self: center;
+  .kpi-title,
+  .kpi-metric {
+    color: black;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    padding: 25px;
+    place-content: center;
+  }
+}
+.total-active-erg-members {
+  grid-area: 1/2/4/11;
+}
+
+.graph-card {
+  grid-area: 4/2/8/11;
+  height: 100%;
+}
+
+.graph-container {
+  padding: 10px;
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+  .page-container {
+    width: calc(100vw - 90px);
+    left: 90px;
+    position: relative;
+    top: 0;
+  }
+
+  .kpi-card {
+    .kpi-title,
+    .kpi-metric {
+      justify-content: flex-start;
+    }
+  }
+  .graph-card {
+    grid-area: 4/2/11/11;
+  }
+  .graph-container {
+    padding: 25px;
+  }
+}
+
+// X-Large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+}
+
+// XX-Large devices (larger desktops, 1400px and up)
+@media (min-width: 1400px) {
+}

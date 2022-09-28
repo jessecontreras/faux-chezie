@@ -1,0 +1,49 @@
+<div class="page-container">
+  <div class="login">
+    <div class="login-section">
+      <div class="logo"><img src="../../assets/images/login-icon.png" /></div>
+      <div class="input-card">
+        <div class="input-card-content">
+          <div class="input-title">Log in</div>
+          <form [formGroup]="loginForm">
+            <input
+              type="email"
+              formControlName="email"
+              placeholder="Email"
+              [ngClass]="{
+                'is-invalid':
+                  formSubmitted && loginForm.controls['email'].errors
+              }"
+            />
+            <input
+              type="password"
+              formControlName="password"
+              placeholder="Password"
+              [ngClass]="{
+                'is-invalid':
+                  formSubmitted  && loginForm.controls['password'].errors
+              }"
+            />
+            <button (click)="authUser()">
+              <b>{{ buttonText }}</b>
+            </button>
+            <small></small>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="content-preview">
+      <div class="content-container">
+        <object
+          data="../../assets/images/chezie-content.svg"
+          height="500px"
+          width="400px"
+        ></object>
+        <div class="content-text">
+          <h1>Inclusion discovered. Work Reimagined.</h1>
+          <p>Welcome! Login, discover, create, join and explore Chezie's ERGs.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

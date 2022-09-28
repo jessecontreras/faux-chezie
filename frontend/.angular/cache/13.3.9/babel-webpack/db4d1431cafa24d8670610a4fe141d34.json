@@ -1,0 +1,1 @@
+{"ast":null,"code":"export class ERG {\n  //TODO: Is this redundant? Isn't my alert class already a de-facto partial given all optional properties? Think about it Jes...come back to this if you have time.\n  constructor(name = '', numberOfUsers = 0) {\n    this.name = name;\n    this.numberOfUsers = numberOfUsers;\n  }\n\n}","map":null,"metadata":{},"sourceType":"module"}

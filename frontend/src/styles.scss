@@ -1,1 +1,233 @@
-/* You can add global styles to this file, and also import other style files */
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@use "@angular/material" as mat;
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat.core();
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$faux-chezie-primary: mat.define-palette(mat.$indigo-palette);
+$faux-chezie-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
+
+// The warn palette is optional (defaults to red).
+$faux-chezie-warn: mat.define-palette(mat.$red-palette);
+
+// Create the theme object. A theme consists of configurations for individual
+// theming systems such as "color" or "typography".
+$faux-chezie-theme: mat.define-light-theme(
+  (
+    color: (
+      primary: $faux-chezie-primary,
+      accent: $faux-chezie-accent,
+      warn: $faux-chezie-warn,
+    ),
+  )
+);
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include mat.all-component-themes($faux-chezie-theme);
+
+@font-face {
+  font-family: "open_sansitalic";
+  src: url("./assets/fonts/opensans-variablefont_wdthwght-webfont.woff2")
+      format("woff2"),
+    url("./assets/fonts/opensans-italic-variablefont_wdthwght-webfont.woff")
+      format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "open_sansregular";
+  src: url("./assets/fonts/opensans-variablefont_wdthwght-webfont.woff2")
+      format("woff2"),
+    url("./assets/fonts/opensans-variablefont_wdthwght-webfont.woff")
+      format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+$error-red: rgb(210, 18, 18);
+$chezie-blue: #3347fe;
+
+html,
+body {
+  height: 100%;
+  overflow-x: hidden;
+  font-family: "open_sansregular", Courier, monospace;
+}
+body {
+  margin: 0;
+}
+
+button,
+input {
+  width: 331px;
+  height: 35px;
+  border-width: 0.5px;
+  padding: 5px;
+  margin: 15px;
+}
+
+button {
+  cursor: pointer;
+}
+
+button {
+  border-radius: 4px;
+  border: 0px;
+}
+
+.input-card {
+  width: 396px;
+  height: 300px;
+  border-radius: 4px;
+  background-color: rgb(255, 255, 255);
+  box-shadow: rgb(204 204 204 / 20%) 0px 1px 2px 0px;
+}
+
+input {
+  border-radius: 4px;
+  outline: none !important;
+  border: 1px solid rgb(231, 233, 235);
+}
+
+input:focus {
+  border: 1px solid $chezie-blue;
+}
+
+.input-card-content {
+  display: flex;
+  flex-flow: row wrap;
+}
+.input-title {
+  font-size: 23px;
+  color: black;
+}
+
+.is-invalid {
+  border-color: $error-red;
+}
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+/*Bootstrap CSS alert styles*/
+.alert {
+  padding: 15px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  display: flex;
+}
+
+.alert h4 {
+  margin-top: 0;
+  color: inherit;
+}
+
+.alert .alert-link {
+  font-weight: bold;
+}
+
+.alert > p,
+.alert > ul {
+  margin-bottom: 0;
+}
+
+.alert > p + p {
+  margin-top: 5px;
+}
+
+.alert-dismissable,
+.alert-dismissible {
+  padding-right: 35px;
+}
+
+.alert-dismissable .close,
+.alert-dismissible .close {
+  position: relative;
+  top: -2px;
+  //right: -21px;
+  color: inherit;
+  cursor: pointer;
+}
+
+.alert-success {
+  background-color: #dff0d8;
+  border-color: #d6e9c6;
+  color: #3c763d;
+}
+
+.alert-success hr {
+  border-top-color: #c9e2b3;
+}
+
+.alert-success .alert-link {
+  color: #2b542c;
+}
+
+.alert-info {
+  background-color: #d9edf7;
+  border-color: #bce8f1;
+  color: #31708f;
+}
+
+.alert-info hr {
+  border-top-color: #a6e1ec;
+}
+
+.alert-info .alert-link {
+  color: #245269;
+}
+
+.alert-warning {
+  background-color: #fcf8e3;
+  border-color: #faebcc;
+  color: #8a6d3b;
+}
+
+.alert-warning hr {
+  border-top-color: #f7e1b5;
+}
+
+.alert-warning .alert-link {
+  color: #66512c;
+}
+
+.alert-danger {
+  background-color: #f2dede;
+  border-color: #ebccd1;
+  color: #a94442;
+}
+
+.alert span {
+  flex-direction: row;
+  padding-left: 25px;
+}
+
+.alert-danger hr {
+  border-top-color: #e4b9c0;
+}
+
+.alert-danger .alert-link {
+  color: #843534;
+}
+
+/*Overwrite mat-dialog-container styles*/
+mat-dialog-container#modal-component {
+  border: 0.5px solid #262626;
+  border-radius: 11px;
+}

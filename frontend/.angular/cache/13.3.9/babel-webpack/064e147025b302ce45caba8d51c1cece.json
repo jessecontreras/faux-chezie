@@ -1,0 +1,1 @@
+{"ast":null,"code":"export class ServerError {\n  constructor(error = '') {\n    this.error = error;\n  }\n\n}","map":null,"metadata":{},"sourceType":"module"}

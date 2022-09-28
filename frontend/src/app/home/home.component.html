@@ -1,0 +1,46 @@
+<div class="page-container">
+  <div class="home-landing">
+    <div class="welcome-message">
+      <h1>Welcome {{ user?.firstName }}</h1>
+    </div>
+
+    <div class="kpi-1">
+      <div class="kpi-1-title"># OF ERGs</div>
+      <div class="kpi-1-metric">{{ ergs.length }}</div>
+    </div>
+    <div class="kpi-2">
+      <div class="kpi-2-title">ERG MEMBERS</div>
+      <div class="kpi-2-metric">{{ ergMemberCount }}</div>
+    </div>
+
+    <button mat-button class="add-erg-button" (click)="openAddErgDialog()">
+      Add ERG
+    </button>
+    <div class="ergs-header">All ERGs</div>
+  </div>
+  <div class="ergs-container">
+    <ng-container *ngIf="ergs">
+      <ng-container *ngFor="let erg of ergs">
+        <mat-card class="erg-card">
+          <img
+            mat-card-image
+            src="../../assets/images/chezie-card.jpeg"
+            alt="Chezie card logo"
+          /><mat-card-content>
+            <p class="erg-name-card">
+              {{ erg.name }}
+              <span class="delete-erg" (click)="openConfirmErgDeletion(erg._id)">
+                x</span
+              >
+            </p>
+
+            <div class="erg-member-info-card">
+              <mat-icon class="erg-icon-card"> group</mat-icon>
+              <p class="erg-member-count-card">{{ erg.numberOfMembers }}</p>
+            </div>
+          </mat-card-content>
+        </mat-card>
+      </ng-container>
+    </ng-container>
+  </div>
+</div>

@@ -1,0 +1,60 @@
+<div class="modal-content-wrapper">
+  <header class="modal-header">
+    <h1 class="modal-title">Create a new ERG</h1>
+  </header>
+  <section class="modal-body">
+    <mat-stepper [linear]="isLinear" #stepper>
+      <mat-step [stepControl]="firstFormGroup">
+        <form [formGroup]="firstFormGroup">
+          <ng-template matStepLabel>What is the name of this ERG</ng-template>
+          <mat-form-field appearance="fill">
+            <mat-label>ERG NAME</mat-label>
+            <input
+              matInput
+              placeholder="Black@Chezie"
+              formControlName="ergName"
+              required
+            />
+          </mat-form-field>
+          <div>
+            <button mat-button matStepperNext>Next</button>
+          </div>
+        </form>
+      </mat-step>
+      <mat-step [stepControl]="secondFormGroup" label="Members in ERG">
+        <form [formGroup]="secondFormGroup">
+          <mat-form-field appearance="fill">
+            <mat-label># Of Members In ERG</mat-label>
+            <input
+              matInput
+              formControlName="numberOfMembers"
+              placeholder="25"
+              required
+            />
+          </mat-form-field>
+          <div>
+            <button mat-button matStepperPrevious>Back</button>
+            <button mat-button matStepperNext>Next</button>
+          </div>
+        </form>
+      </mat-step>
+      <mat-step>
+        <ng-template matStepLabel>Finish</ng-template>
+        <p>Create and Finish</p>
+        <div>
+          <button mat-button matStepperPrevious>Back</button>
+          <button mat-button (click)="createErg()">Create</button>
+        </div>
+      </mat-step>
+    </mat-stepper>
+  </section>
+  <footer class="modal-footer">
+    <button
+      mat-raised-button
+      class="modal-cancel-button"
+      (click)="closeModal()"
+    >
+      Close
+    </button>
+  </footer>
+</div>
